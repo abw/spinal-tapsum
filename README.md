@@ -7,6 +7,13 @@ It goes up to eleven.  It's one louder.
 
 ## Installation
 
+Clone the repository.
+
+```bash
+$ git clone https://github.com/abw/spinal-tapsum.git
+$ cd spinal-tapsum
+```
+
 Install the dependencies using your favourite package manager.
 
 ### npm
