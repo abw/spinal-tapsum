@@ -152,6 +152,40 @@ $ bin/spinal-tapsum.js -l 1
 He totally ruined the gig, there. He walks off and then you know, he can't be expected to sit home and get money, we've got to get someone else in there.
 ```
 
+## Library Function
+
+The `quotes()` function implements the functionality to select quotes from
+a source text.
+
+
+```js
+import quotes from 'lib/quotes.js'
+
+const text    = "Quote 1\n\nQuote 2\n\nQuote 2\n\n...etc..."
+const n       = 3
+const options = {
+  // any of these options
+  //   sequential: true,
+  //   lines:      true,
+  //   paras:      true,
+  //   divs:       true,
+}
+
+console.log(
+  quotes(text, n, options)
+)
+```
+
+The first argument, `text`, is the source text you want to extract quotes
+from.  Each quote should be separated by two or more newlines.
+
+The second argument, `n` is the number of quotes you want to extract.
+
+The third optional argument is an object containing options.  This can include
+any of `sequential`, `lines`, `paras` or `divs` set to `true` to enable that
+option.  Note that `paras` and `divs` are mutually exclusive.  You can set
+one or the other but not both.
+
 ## Author
 
 Andy Wardley, March 2023
