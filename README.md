@@ -82,14 +82,18 @@ Usage:
   spinal-tapsum.js [options] number-of-paragraphs
 
 Options:
-  -h / --help     This help
-  -v / --version  Print version number
-  -p / --paras    Wrap each paragraph in <p>...</p>
-  -d / --divs     Wrap each paragraph in <div>...</div>
-  -l / --lines    Output each paragraph as a single line
+  -h / --help         This help
+  -v / --version      Print version number
+  -s / --sequential   Select sequential quotes
+  -p / --paras        Wrap each paragraph in <p>...</p>
+  -d / --divs         Wrap each paragraph in <div>...</div>
+  -l / --lines        Output each paragraph as a single line
 ```
 
 The `-v` or `--version` option will display the current version.
+
+The default behaviour is to pick random quotes.  The `-s` or `--sequential`
+option can be used to select sequential quotes.
 
 The `-p` or `--paras` option will wrap the quotes in `<p>...</p>` elements.
 

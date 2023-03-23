@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 import { bin } from '@abw/badger-filesystem'
 import { cmdLineArg, cmdLineFlags, quit } from '@abw/badger'
+import { range } from '@abw/badger-utils'
 
 const { flags, args } = cmdLineFlags(
   {
-    options: 'paras divs lines',
+    options: 'paras divs lines sequential',
     short: {
       p: 'paras',
       d: 'divs',
       l: 'lines',
+      s: 'sequential',
       h: 'help',
       v: 'version',
     },
@@ -22,9 +24,7 @@ const { flags, args } = cmdLineFlags(
 const n      = parseInt(await cmdLineArg('How many paragraphs?', args))
 const text   = await bin().up().dir('src').file('spinal-tap.txt').read()
 const paras  = text.split(/\n\n+/)
-const start  = Math.floor(Math.random() * (paras.length - n))
-const end    = start + n
-const slice  = paras.slice(start, end)
+const slice  = flags.sequential ? pickQuotes(paras, n) : pickRandomQuotes(paras, n)
 const elem   = flags.paras ? 'p' : flags.divs ? 'div' : undefined
 let   output = slice
 
@@ -40,10 +40,21 @@ console.log(
   output.join('\n\n')
 )
 
+function pickRandomQuotes(paras, count) {
+  return range(1, count).flatMap( () => pickQuotes(paras) )
+}
+
+function pickQuotes(paras, count=1) {
+  const start = Math.floor(Math.random() * (paras.length + 1 - count))
+  const end   = start + count
+  return paras.slice(start, end)
+}
+
 function pWrap(quote, elem='p') {
   const indented = quote.split('\n').map( line => '  ' + line ).join('\n')
   return `<${elem}>\n` + indented + `\n</${elem}>`
 }
+
 
 function help() {
   quit(`spinal-tapsum.js
@@ -54,11 +65,12 @@ Usage:
   spinal-tapsum.js [options] number-of-paragraphs
 
 Options:
-  -h / --help     This help
-  -v / --version  Print version number
-  -p / --paras    Wrap each paragraph in <p>...</p>
-  -d / --divs     Wrap each paragraph in <div>...</div>
-  -l / --lines    Output each paragraph as a single line
+  -h / --help         This help
+  -v / --version      Print version number
+  -s / --sequential   Select sequential quotes
+  -p / --paras        Wrap each paragraph in <p>...</p>
+  -d / --divs         Wrap each paragraph in <div>...</div>
+  -l / --lines        Output each paragraph as a single line
 `
   )
 }
