@@ -92,6 +92,11 @@ Options:
 
 The `-v` or `--version` option will display the current version.
 
+```
+$ bin/spinal-tapsum.js -v
+Version 1.0.0
+```
+
 The default behaviour is to pick random quotes.  The `-s` or `--sequential`
 option can be used to select sequential quotes.
 

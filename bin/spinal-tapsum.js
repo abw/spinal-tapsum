@@ -3,6 +3,9 @@ import { bin } from '@abw/badger-filesystem'
 import { cmdLineArg, cmdLineFlags, quit } from '@abw/badger'
 import { range } from '@abw/badger-utils'
 
+const root = bin().up()
+const pkg  = await root.file('package.json', { codec: 'json' }).read()
+
 const { flags, args } = cmdLineFlags(
   {
     options: 'paras divs lines sequential',
@@ -16,7 +19,7 @@ const { flags, args } = cmdLineFlags(
     },
     on: {
       help,
-      version,
+      version
     }
   },
 )
@@ -76,5 +79,5 @@ Options:
 }
 
 function version() {
-  quit('Version 0.0.1')
+  quit(`Version ${pkg.version}`)
 }

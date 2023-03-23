@@ -1,14 +1,18 @@
 {
   "name": "spinal-tapsum",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Generated placeholder text from Spinal Tap quotes",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Lorem Ipsum",
+    "placeholder",
+    "Spinal Tap"
+  ],
+  "author": "Andy Wardley",
   "license": "ISC",
   "dependencies": {
     "@abw/badger": "^1.1.10",
