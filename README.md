@@ -106,6 +106,14 @@ $ bin/spinal-tapsum.js -d 1
 </div>
 ```
 
+The `-l` or `--lines` option removes all the newlines from each paragraph
+displaying them as a single line of text.
+
+```
+$ bin/spinal-tapsum.js -l 1
+He totally ruined the gig, there. He walks off and then you know, he can't be expected to sit home and get money, we've got to get someone else in there.
+```
+
 ## Author
 
 Andy Wardley, March 2023
