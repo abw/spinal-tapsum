@@ -95,6 +95,28 @@ The `-v` or `--version` option will display the current version.
 The default behaviour is to pick random quotes.  The `-s` or `--sequential`
 option can be used to select sequential quotes.
 
+```
+$ bin/spinal-tapsum.js -s 3
+I'm Lieutenant Bob Hookstratten. Welcome to the Lindberg Air Force base. This
+is your gentlemen's first visit to a military facility? Fine, may I start by
+saying how thrilled we are to have you here, we are such fans of your music,
+and all of your records. I am not speaking of yours personally, but the whole
+genre of the rock and roll... of the exiting things that are happening in the
+music today.
+
+Let me explain a bit of what's going on. This is our monthly "at-ease
+weekend", gives us the chance to kind of let down our hair, although I see
+you all have a head start. These haircuts wouldn't pass military muster,
+believe me. Although I shouldn't talk I, my hair's getting a little shaggy
+too, better not get too close to you, they'll think I'm part of the band, I
+am joking, of course. Shall we go in and I'll show you around.
+
+Walk this way, please, right through here. Did you ever run into a musical
+group works out of Kansas City call themselves "Four Jacks and a Jill"?
+They've been at a Ramada Inn there for about 18 months. If you're ever in
+Kansas City and want to hear some good music, you might want to drop by.
+```
+
 The `-p` or `--paras` option will wrap the quotes in `<p>...</p>` elements.
 
 ```
