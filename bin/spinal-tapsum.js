@@ -20,21 +20,20 @@ const { flags, args } = cmdLineFlags(
 )
 
 const n      = parseInt(await cmdLineArg('How many paragraphs?', args))
-const root   = bin().up()
-const text   = await root.file('spinal-tap.txt').read()
+const text   = await bin().up().file('spinal-tap.txt').read()
 const paras  = text.split(/\n\n+/)
 const start  = Math.floor(Math.random() * (paras.length - n))
 const end    = start + n
 const slice  = paras.slice(start, end)
-const elem   = flags.paras ? 'p' : flags.divs ? 'div' : undefined;
-let   output = slice;
+const elem   = flags.paras ? 'p' : flags.divs ? 'div' : undefined
+let   output = slice
 
 if (flags.lines)  {
-  output = output.map( para => para.replaceAll(/\n/g, ' ') );
+  output = output.map( para => para.replaceAll(/\n/g, ' ') )
 }
 
 if (elem)  {
-  output = output.map( para => pWrap(para, elem) );
+  output = output.map( para => pWrap(para, elem) )
 }
 
 console.log(
