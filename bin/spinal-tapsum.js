@@ -20,7 +20,7 @@ const { flags, args } = cmdLineFlags(
 )
 
 const n      = parseInt(await cmdLineArg('How many paragraphs?', args))
-const text   = await bin().up().file('spinal-tap.txt').read()
+const text   = await bin().up().dir('src').file('spinal-tap.txt').read()
 const paras  = text.split(/\n\n+/)
 const start  = Math.floor(Math.random() * (paras.length - n))
 const end    = start + n
