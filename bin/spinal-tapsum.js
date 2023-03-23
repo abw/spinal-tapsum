@@ -5,6 +5,7 @@ import { range } from '@abw/badger-utils'
 
 const root = bin().up()
 const pkg  = await root.file('package.json', { codec: 'json' }).read()
+const file = root.dir('src').file('spinal-tap.txt')
 
 const { flags, args } = cmdLineFlags(
   {
@@ -25,7 +26,7 @@ const { flags, args } = cmdLineFlags(
 )
 
 const n      = parseInt(await cmdLineArg('How many paragraphs?', args))
-const text   = await bin().up().dir('src').file('spinal-tap.txt').read()
+const text   = await file.read()
 const paras  = text.split(/\n\n+/)
 const slice  = flags.sequential ? pickQuotes(paras, n) : pickRandomQuotes(paras, n)
 const elem   = flags.paras ? 'p' : flags.divs ? 'div' : undefined
@@ -57,7 +58,6 @@ function pWrap(quote, elem='p') {
   const indented = quote.split('\n').map( line => '  ' + line ).join('\n')
   return `<${elem}>\n` + indented + `\n</${elem}>`
 }
-
 
 function help() {
   quit(`spinal-tapsum.js
