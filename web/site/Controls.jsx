@@ -24,21 +24,27 @@ const Controls = ({
   <div>
     <div className="field">
       <label>Paragraphs</label>
-      <input
-        type="number" className="paras-slider"
-        value={n} min="1" max="11"
-        onChange={e => setN(e.target.value)}
-      />
-      <div className="flex space field mar-t-2">
-        <button onClick={oneQuieter} className="small brand">
+      <div className="flex gap-2">
+        <button
+          onClick={oneQuieter} className="brand"
+          disabled={n === 1}
+        >
           -1
         </button>
-        <button onClick={oneLouder} className="small brand">
+        <input
+          type="number" className="paras-slider"
+          value={n} min="1" max="11"
+          onChange={e => setN(e.target.value)}
+        />
+        <button
+          onClick={oneLouder} className="brand"
+          disabled={n === 11}
+        >
           +1
         </button>
       </div>
     </div>
-    <label>
+    <label className="border">
       <input
         type="checkbox" value={sequential}
         onChange={e => setSequential(e.target.checked)}

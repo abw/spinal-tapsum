@@ -16,13 +16,11 @@ const Output = ({
   return (
     <div>
       <div
-        className="pad-4 border surface-5"
-        // dangerouslySetInnerHTML={{ __html: output.replaceAll(/\n\n/g, '<br/><br/>') }}
+        className="pad-6 border surface-5 shadow-4 output"
       >
-        {/* {output.split(/\n/).map( (t, n) => <>{t}<br/></> )} */}
         {output.split(/\n\n/).map( (t, n) => <p key={n}>{t}</p>)}
       </div>
-      <div className="text-right mar-t-2">
+      <div className="text-right mar-t-6">
         <button
           className={copied ? 'green' : 'brand'}
           onClick={copy}
@@ -34,15 +32,6 @@ const Output = ({
     </div>
   )
 }
-
-/*
-const Format = ({text, style}) => {
-  if (style === 'text') {
-    return text.map( (t, n) => <p key={n}>{t}</p> )
-  }
-  else if (style === 'paras')
-}
-*/
 
 
 export default Tapsum.Consumer(Output)
