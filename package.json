@@ -5,7 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint 'web/**/*.{js,jsx}' 'lib/**/*.{js,jsx}'"
   },
   "keywords": [
     "Lorem Ipsum",
@@ -20,6 +23,20 @@
     "@abw/badger-utils": "^1.0.19"
   },
   "devDependencies": {
-    "eslint": "^8.36.0"
+    "@abw/badger-css": "^0.2.5",
+    "@abw/badger-timestamp": "^1.0.4",
+    "@abw/react-context": "^2.0.3",
+    "@abw/react-night-and-day": "^0.0.6",
+    "@vitejs/plugin-react": "^4.1.1",
+    "eslint": "^8.36.0",
+    "eslint-plugin-react": "^7.33.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.18.0",
+    "react-router-dom": "^6.18.0",
+    "sass": "^1.69.5",
+    "vite": "^4.5.0",
+    "vite-jsconfig-paths": "^2.0.1",
+    "vite-plugin-svgr": "^4.1.0"
   }
 }
