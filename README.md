@@ -5,6 +5,8 @@ using quotes from the movie "This is Spinal Tap".
 
 It goes up to eleven.  It's one louder.
 
+[Interactive Demo](https://abw.github.io/abw/spinal-tapsum)
+
 ## Installation
 
 Clone the repository.

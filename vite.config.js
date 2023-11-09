@@ -17,12 +17,12 @@ export default defineConfig({
     jsconfigPaths({ root: '../' })
   ],
   root: 'web',
-  base: '/',
+  base: '/spinal-tapsum',
   envDir: '../',
   define,
   build: {
     emptyOutDir: true,
-    outDir: '../demo'
+    outDir: '../docs'
   },
   server: {
     host: 'spinal-tapsum.local.wardley.org',
