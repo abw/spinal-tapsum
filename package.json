@@ -20,10 +20,11 @@
   "dependencies": {
     "@abw/badger": "^1.1.10",
     "@abw/badger-filesystem": "^1.0.2",
+    "@abw/badger-icon": "^0.0.12",
     "@abw/badger-utils": "^1.0.19"
   },
   "devDependencies": {
-    "@abw/badger-css": "^0.2.5",
+    "@abw/badger-css": "^1.0.11",
     "@abw/badger-timestamp": "^1.0.4",
     "@abw/react-context": "^2.0.3",
     "@abw/react-night-and-day": "^0.0.6",

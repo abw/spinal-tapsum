@@ -1,6 +1,7 @@
 import React from 'react'
 import Tapsum from '../context/Tapsum.js'
-import Icon from '../ui/Icon.jsx'
+// import Icon from '../ui/Icon.jsx'
+import { Icon } from '@abw/badger-icon'
 
 /*
 const styles = {
@@ -17,7 +18,10 @@ const Controls = ({
   oneLouder,
   sequential,
   setSequential,
-  regenerate
+  search,
+  setSearch,
+  clearSearch,
+  regenerate,
   // style,
   // setStyle
 }) =>
@@ -44,6 +48,17 @@ const Controls = ({
         </button>
       </div>
     </div>
+    <div className="field mar-t-4">
+      <div className="inputs">
+        <div className="prefix">
+          <Icon name="search"/>
+        </div>
+        <input type="text" value={search} onChange={e => setSearch(e.target.value)}/>
+        <div className="suffix">
+          <Icon name="cross" onClick={clearSearch}/>
+        </div>
+      </div>
+    </div>
     <label className="border">
       <input
         type="checkbox" value={sequential}
@@ -65,7 +80,7 @@ const Controls = ({
     */}
     <button onClick={regenerate} className="brand wide mar-t-4">
       Regenerate
-      <Icon name="redo" className="on-right"/>
+      <Icon name="rotate" className="on-right"/>
     </button>
   </div>
 
