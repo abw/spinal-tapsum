@@ -1,6 +1,6 @@
 {
   "name": "spinal-tapsum",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generated placeholder text from Spinal Tap quotes",
   "main": "index.js",
   "type": "module",
