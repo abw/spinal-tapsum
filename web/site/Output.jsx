@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Tapsum from '../context/Tapsum.js'
 import Icon from '../ui/Icon.jsx'
 import { sleep } from '@abw/badger-utils'
+import None from './None.jsx'
 
 const Output = ({
   output,
@@ -15,11 +16,12 @@ const Output = ({
   }
   return (
     <div>
-      <div
-        className="pad-6 border surface-5 shadow-4 output"
-      >
-        {output.split(/\n\n/).map( (t, n) => <p key={n}>{t}</p>)}
-      </div>
+      { output.length === 0
+        ? <None/>
+        : <div className="pad-6 border surface-5 shadow-4 output">
+            {output.split(/\n\n/).map( (t, n) => <p key={n}>{t}</p>)}
+          </div>
+      }
       <div className="text-right mar-t-6">
         <button
           className={copied ? 'green' : 'brand'}
